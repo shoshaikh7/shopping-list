@@ -8,8 +8,20 @@ $(function () {
   });
 
   // Uncheck/Check items
+  $('.shopping-list').on('click', 'li .shopping-item-controls .shopping-item-toggle',e => {     
+    let shopping_item = $(e.currentTarget).closest('.shopping-item-controls').siblings('.shopping-item');
+    shopping_item.toggleClass('shopping-item__checked');
 
+    let button_label = $(e.currentTarget).find('.button-label');
+    
+    if (shopping_item.hasClass('shopping-item__checked')) {
+      button_label.text("uncheck");
+    } else {
+      button_label.text("check");
+    }
+  });
   
   // Remove items
+  
 
 });
