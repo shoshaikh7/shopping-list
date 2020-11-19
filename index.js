@@ -8,7 +8,7 @@ $(function () {
   });
 
   // Uncheck/Check items
-  $('.shopping-list').on('click', 'li .shopping-item-controls .shopping-item-toggle',e => {     
+  $('.shopping-list').on('click', 'li .shopping-item-controls .shopping-item-toggle',e => {
     let shopping_item = $(e.currentTarget).closest('.shopping-item-controls').siblings('.shopping-item');
     shopping_item.toggleClass('shopping-item__checked');
 
@@ -22,6 +22,9 @@ $(function () {
   });
   
   // Remove items
-  
+  $('.shopping-list').on('click', 'li .shopping-item-controls .shopping-item-delete',e => {
+    let shopping_entry = $(e.currentTarget).closest('.shopping-item-controls').closest('li');
+    shopping_entry.remove();
+  });
 
 });
